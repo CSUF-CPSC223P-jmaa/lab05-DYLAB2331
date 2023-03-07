@@ -20,6 +20,10 @@ def summation(n, term):
     """
     assert n >= 1
     "*** YOUR CODE HERE ***"
+    if n == 1:
+        return term(n)
+    else:
+        return term(n) + summation(n-1, term)
 
 
 def paths(m, n):
@@ -75,3 +79,11 @@ def double_eights(n):
     True
     """
     "*** YOUR CODE HERE ***"
+    curr = n // 10
+    last = n % 10
+
+    if curr == 8 and last == 8:
+        print("True")
+    else:
+        return double_eights(curr)
+
